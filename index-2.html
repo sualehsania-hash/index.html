@@ -1,0 +1,224 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Purple Love</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background:linear-gradient(135deg,#4b0082,#8a2be2,#d8b4fe);font-family:Poppins}
+.gift{width:160px;height:160px;background:#8a2be2;position:relative;cursor:pointer;border-radius:12px}
+.lid{position:absolute;top:-35px;width:160px;height:35px;background:#c77dff;transition:.6s}
+.note{display:none;position:absolute;bottom:180px;left:50%;transform:translateX(-50%);width:340px;height:430px;overflow:auto;background:#f7e8ff;border-radius:20px;padding:20px;color:#111;box-shadow:0 0 20px #fff}
+h2{font-family:"Dancing Script",cursive;color:#6a0dad;text-align:center;font-size:40px}
+.open .lid{transform:translateY(-70px) rotate(-15deg)}
+.open .note{display:block}
+</style></head><body>
+<div class="gift" onclick="this.classList.toggle('open')"><div class="lid"></div>
+<div class="note">
+<h2>💜 My Dearest Ahsan 💜</h2>
+<p>🥹💖 I love you sooooooooooooo muchhhhhhhhhhh! 💜</p>
+<p>🌸 Ahsan, ap meri zindagi ki sabse khoobsurat blessing ho. Allah ka jitna shukar ada karun utna kam hai. apke aane ke baad meri duniya aur bhi haseen ho gayi.apne meri zindagi m akar sb kuch asan krdia apka hona mere liye bohot barhi naimat hai. ✨</p>
+<p>🫶 apki muskurahat meri khushi hai, apki awaaz mera sukoon. Main hamesha apke saath rehna chahti hoon aur apki khushi ke liye sb kuch krna chahti ho mein hamesha apko smbhal kr rkhongi apke sth rahongi chahe kesa bhi waqt ho apka hath nhi chorongi mein. 💕</p>
+<p>🤲 Allah se meri dua hai ke woh humein hamesha saath rakhe, hamare pyaar ki hifazat kare aur hamari zindagi khushiyon se bhar de mujhe hamesha apne saye m rkhega ahsan kbhi mujhse dur mt hoyega meri har khushi apse hai apke bagheir mein kuch bhi nhi.</p>
+<p style="text-align:center">💜 I Love You Forever & Always 💜</p>
+<p style="text-align:right">🌷 Forever Yours,<br><b>Sania</b></p>
+</div></div></body></html>
+<!-- ⭐ Part 2: Sparkles + Petals + Extra Effects -->
+
+<style>
+/* Sparkles */
+.sparkle{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:white;
+  border-radius:50%;
+  animation:twinkle 3s linear infinite;
+  opacity:0.7;
+}
+
+@keyframes twinkle{
+  0%{transform:scale(0); opacity:0;}
+  50%{transform:scale(1.5); opacity:1;}
+  100%{transform:scale(0); opacity:0;}
+}
+
+/* Falling petals */
+.petal{
+  position:absolute;
+  top:-10vh;
+  font-size:18px;
+  animation:fall 7s linear infinite;
+}
+
+@keyframes fall{
+  0%{transform:translateY(-10vh) rotate(0deg);}
+  100%{transform:translateY(110vh) rotate(360deg);}
+}
+</style>
+
+<script>
+// ⭐ Sparkles generator
+setInterval(()=>{
+  const s = document.createElement("div");
+  s.classList.add("sparkle");
+  s.style.left = Math.random()*100 + "vw";
+  s.style.top = Math.random()*100 + "vh";
+  document.body.appendChild(s);
+
+  setTimeout(()=>s.remove(),3000);
+},200);
+
+// 🌸 Falling petals generator
+setInterval(()=>{
+  const p = document.createElement("div");
+  p.classList.add("petal");
+  p.innerHTML = "🌸";
+  p.style.left = Math.random()*100 + "vw";
+  p.style.fontSize = Math.random()*15 + 10 + "px";
+  document.body.appendChild(p);
+
+  setTimeout(()=>p.remove(),7000);
+},800);
+</script>
+<!-- 🎊 Part 3: Confetti + Music + Final Effects -->
+
+<style>
+/* Confetti */
+.confetti{
+  position:absolute;
+  width:8px;
+  height:8px;
+  background:red;
+  top:-10px;
+  animation:confettiFall 4s linear infinite;
+}
+
+@keyframes confettiFall{
+  0%{transform:translateY(-10vh) rotate(0deg);}
+  100%{transform:translateY(110vh) rotate(720deg);}
+}
+
+/* Music button */
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  padding:10px 15px;
+  background:#ffb6ff;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  box-shadow:0 0 15px white;
+  font-weight:bold;
+}
+</style>
+
+<button class="music-btn" onclick="toggleMusic()">🎵 Music</button>
+
+<audio id="bgmusic" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b6d6c3d1.mp3?filename=soft-piano-love-ambient-110397.mp3" type="audio/mp3">
+</audio>
+
+<script>
+let music = document.getElementById("bgmusic");
+let playing = false;
+
+function toggleMusic(){
+  if(!playing){
+    music.play();
+    playing = true;
+  }else{
+    music.pause();
+    playing = false;
+  }
+}
+
+/* Confetti generator */
+setInterval(()=>{
+  const c = document.createElement("div");
+  c.classList.add("confetti");
+  c.style.left = Math.random()*100 + "vw";
+  c.style.background = ["#ff4d6d","#ffd6ff","#ffffff","#c77dff"][Math.floor(Math.random()*4)];
+  document.body.appendChild(c);
+
+  setTimeout(()=>c.remove(),4000);
+},150);
+</script>
+<!-- 💜 PART 4 : BIG FLOWERS + HEARTS -->
+
+<style>
+.bigFlower{
+    position:fixed;
+    top:-80px;
+    font-size:45px;
+    animation:flowerFall linear forwards;
+    z-index:1;
+    pointer-events:none;
+}
+
+.bigHeart{
+    position:fixed;
+    bottom:-80px;
+    font-size:35px;
+    animation:heartFloat 8s linear forwards;
+    z-index:1;
+    pointer-events:none;
+}
+
+@keyframes flowerFall{
+    0%{
+        transform:translateY(-100px) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+@keyframes heartFloat{
+    0%{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh) scale(1.8);
+        opacity:0;
+    }
+}
+</style>
+
+<script>
+
+// 🌸 Big Flowers
+const flowers = ["🌸","🌺","🌹","🌷","💐"];
+
+setInterval(() => {
+    const flower = document.createElement("div");
+    flower.className = "bigFlower";
+    flower.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
+    flower.style.left = Math.random()*100 + "vw";
+    flower.style.animationDuration = (6 + Math.random()*5) + "s";
+    document.body.appendChild(flower);
+
+    setTimeout(()=>{
+        flower.remove();
+    },11000);
+
+},700);
+
+// 💜 Floating Hearts
+const hearts = ["💜","💖","💕","💗","❤️"];
+
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "bigHeart";
+    heart.innerHTML = hearts[Math.floor(Math.random()*hearts.length)];
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.animationDuration = (5 + Math.random()*4) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },9000);
+
+},500);
+
+</script>
